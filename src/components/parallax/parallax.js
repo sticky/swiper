@@ -9,11 +9,11 @@ const Parallax = {
     const $el = $(el);
     const rtlFactor = rtl ? -1 : 1;
 
-    const p = $el.attr('data-swiper-parallax') || '0';
-    let x = $el.attr('data-swiper-parallax-x');
-    let y = $el.attr('data-swiper-parallax-y');
-    const scale = $el.attr('data-swiper-parallax-scale');
-    const opacity = $el.attr('data-swiper-parallax-opacity');
+    const p = $el.attr('data-swiper2-parallax') || '0';
+    let x = $el.attr('data-swiper2-parallax-x');
+    let y = $el.attr('data-swiper2-parallax-y');
+    const scale = $el.attr('data-swiper2-parallax-scale');
+    const opacity = $el.attr('data-swiper2-parallax-opacity');
 
     if (x || y) {
       x = x || '0';
@@ -53,7 +53,7 @@ const Parallax = {
     const { $el, slides, progress, snapGrid } = swiper;
     $el
       .children(
-        '[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y], [data-swiper-parallax-opacity], [data-swiper-parallax-scale]',
+        '[data-swiper2-parallax], [data-swiper2-parallax-x], [data-swiper2-parallax-y], [data-swiper2-parallax-opacity], [data-swiper2-parallax-scale]',
       )
       .each((el) => {
         swiper.parallax.setTransform(el, progress);
@@ -66,7 +66,7 @@ const Parallax = {
       slideProgress = Math.min(Math.max(slideProgress, -1), 1);
       $(slideEl)
         .find(
-          '[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y], [data-swiper-parallax-opacity], [data-swiper-parallax-scale]',
+          '[data-swiper2-parallax], [data-swiper2-parallax-x], [data-swiper2-parallax-y], [data-swiper2-parallax-opacity], [data-swiper2-parallax-scale]',
         )
         .each((el) => {
           swiper.parallax.setTransform(el, slideProgress);
@@ -78,12 +78,12 @@ const Parallax = {
     const { $el } = swiper;
     $el
       .find(
-        '[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y], [data-swiper-parallax-opacity], [data-swiper-parallax-scale]',
+        '[data-swiper2-parallax], [data-swiper2-parallax-x], [data-swiper2-parallax-y], [data-swiper2-parallax-opacity], [data-swiper2-parallax-scale]',
       )
       .each((parallaxEl) => {
         const $parallaxEl = $(parallaxEl);
         let parallaxDuration =
-          parseInt($parallaxEl.attr('data-swiper-parallax-duration'), 10) || duration;
+          parseInt($parallaxEl.attr('data-swiper2-parallax-duration'), 10) || duration;
         if (duration === 0) parallaxDuration = 0;
         $parallaxEl.transition(parallaxDuration);
       });
